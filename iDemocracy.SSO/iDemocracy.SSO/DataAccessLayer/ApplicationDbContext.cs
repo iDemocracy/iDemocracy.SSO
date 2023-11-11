@@ -1,11 +1,13 @@
 ﻿using Duende.IdentityServer.EntityFramework.Entities;
 using Duende.IdentityServer.EntityFramework.Interfaces;
+using iDemocracy.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace iDemocracy.SSO.DataAccessLayer;
 
-public class ApplicationDbContext : IdentityDbContext, IConfigurationDbContext, IPersistedGrantDbContext
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IConfigurationDbContext,
+    IPersistedGrantDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)

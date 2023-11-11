@@ -107,3 +107,4 @@ C:\Users\zluis\source\repos\iDemocracy\iDemocracy.SSO\iDemocracy.SSO\iDemocracy.
 C:\Users\zluis\source\repos\iDemocracy\iDemocracy.SSO\iDemocracy.SSO\iDemocracy.SSO\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\Users\zluis\source\repos\iDemocracy\iDemocracy.SSO\iDemocracy.SSO\iDemocracy.SSO\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\Users\zluis\source\repos\iDemocracy\iDemocracy.SSO\iDemocracy.SSO\iDemocracy.SSO\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\zluis\source\repos\iDemocracy\iDemocracy.SSO\iDemocracy.SSO\iDemocracy.SSO\bin\Debug\net6.0\Duende.IdentityServer.AspNetIdentity.dll

@@ -51,6 +51,7 @@
 
   <ItemGroup>
     <PackageReference Include="Duende.IdentityServer" Version="6.3.6" />
+    <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.3.6" />
     <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="6.3.6" />
     <PackageReference Include="Duende.IdentityServer.EntityFramework.Storage" Version="6.3.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.24" />

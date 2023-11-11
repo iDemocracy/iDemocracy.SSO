@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using System.Text.Json;
 using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
 using Duende.IdentityServer.Test;
@@ -8,6 +9,14 @@ namespace iDemocracy.SSO;
 
 public static class Config
 {
+    private static readonly object address = new
+    {
+        street_address = "One Hacker Way",
+        locality = "Heidelberg",
+        postal_code = "69118",
+        country = "Germany"
+    };
+
     public static IEnumerable<ApiResource> ApiResources =>
         new List<ApiResource>();
 
@@ -65,11 +74,11 @@ public static class Config
     public static List<TestUser> TestUsers =>
         new()
         {
-            new()
+            new TestUser
             {
                 SubjectId = "1",
                 Username = "alice",
-                Password = "password",
+                Password = "alice",
 
                 Claims = new List<Claim>
                 {
@@ -78,7 +87,26 @@ public static class Config
                     new(JwtClaimTypes.FamilyName, "Smith"),
                     new(JwtClaimTypes.Email, "alice@example.com"),
                     new(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
-                    new(JwtClaimTypes.WebSite, "http://alice.com")
+                    new(JwtClaimTypes.WebSite, "http://alice.com"),
+                    new(JwtClaimTypes.Address, JsonSerializer.Serialize(address),
+                        IdentityServerConstants.ClaimValueTypes.Json)
+                }
+            },
+            new TestUser
+            {
+                SubjectId = "2",
+                Username = "bob",
+                Password = "bob",
+                Claims =
+                {
+                    new Claim(JwtClaimTypes.Name, "Bob Smith"),
+                    new Claim(JwtClaimTypes.GivenName, "Bob"),
+                    new Claim(JwtClaimTypes.FamilyName, "Smith"),
+                    new Claim(JwtClaimTypes.Email, "BobSmith@email.com"),
+                    new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
+                    new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
+                    new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address),
+                        IdentityServerConstants.ClaimValueTypes.Json)
                 }
             }
         };

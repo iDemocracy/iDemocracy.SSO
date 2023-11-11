@@ -1,5 +1,7 @@
+using iDemocracy.Models;
 using iDemocracy.SSO;
 using iDemocracy.SSO.DataAccessLayer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -25,11 +27,16 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
 
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
 // Configuración de IdentityServer
 builder.Services.AddIdentityServer()
+    .AddAspNetIdentity<ApplicationUser>()
     .AddConfigurationStore<ApplicationDbContext>()
-    .AddOperationalStore<ApplicationDbContext>()
-    .AddTestUsers(Config.TestUsers);
+    .AddOperationalStore<ApplicationDbContext>();
+
 
 var app = builder.Build();
 

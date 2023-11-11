@@ -9,6 +9,7 @@
       "iDemocracy.SSO/1.0.0": {
         "dependencies": {
           "Duende.IdentityServer": "6.3.6",
+          "Duende.IdentityServer.AspNetIdentity": "6.3.6",
           "Duende.IdentityServer.EntityFramework": "6.3.6",
           "Duende.IdentityServer.EntityFramework.Storage": "6.3.6",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.24",
@@ -73,6 +74,17 @@
         },
         "runtime": {
           "lib/net6.0/Duende.IdentityServer.dll": {
+            "assemblyVersion": "6.3.6.0",
+            "fileVersion": "6.3.6.0"
+          }
+        }
+      },
+      "Duende.IdentityServer.AspNetIdentity/6.3.6": {
+        "dependencies": {
+          "Duende.IdentityServer": "6.3.6"
+        },
+        "runtime": {
+          "lib/net6.0/Duende.IdentityServer.AspNetIdentity.dll": {
             "assemblyVersion": "6.3.6.0",
             "fileVersion": "6.3.6.0"
           }
@@ -956,6 +968,13 @@
       "sha512": "sha512-KQekGpJxb4fENF6zBOU10KTWHxw/Bs8CP3+YXUlz4d/ePxvo/dVU7o/1xlTlDjne7SDqfx06IHMG9Z3mZl9U9Q==",
       "path": "duende.identityserver/6.3.6",
       "hashPath": "duende.identityserver.6.3.6.nupkg.sha512"
+    },
+    "Duende.IdentityServer.AspNetIdentity/6.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4uGK5e74YICN7fJqL42oAu4/l+Rc84Qr8pftUJUH1wHRV6h/LDRp+l3ytly8E1ptYF3gkCViaqUrCtueDih7Kw==",
+      "path": "duende.identityserver.aspnetidentity/6.3.6",
+      "hashPath": "duende.identityserver.aspnetidentity.6.3.6.nupkg.sha512"
     },
     "Duende.IdentityServer.EntityFramework/6.3.6": {
       "type": "package",

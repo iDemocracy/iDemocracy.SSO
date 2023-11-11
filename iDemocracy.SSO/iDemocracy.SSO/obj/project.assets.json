@@ -82,6 +82,25 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Duende.IdentityServer.AspNetIdentity/6.3.6": {
+        "type": "package",
+        "dependencies": {
+          "Duende.IdentityServer": "6.3.6"
+        },
+        "compile": {
+          "lib/net6.0/Duende.IdentityServer.AspNetIdentity.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Duende.IdentityServer.AspNetIdentity.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Duende.IdentityServer.EntityFramework/6.3.6": {
         "type": "package",
         "dependencies": {
@@ -1553,6 +1572,23 @@
         "lib/net6.0/Duende.IdentityServer.xml",
         "lib/net7.0/Duende.IdentityServer.dll",
         "lib/net7.0/Duende.IdentityServer.xml"
+      ]
+    },
+    "Duende.IdentityServer.AspNetIdentity/6.3.6": {
+      "sha512": "4uGK5e74YICN7fJqL42oAu4/l+Rc84Qr8pftUJUH1wHRV6h/LDRp+l3ytly8E1ptYF3gkCViaqUrCtueDih7Kw==",
+      "type": "package",
+      "path": "duende.identityserver.aspnetidentity/6.3.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "duende.identityserver.aspnetidentity.6.3.6.nupkg.sha512",
+        "duende.identityserver.aspnetidentity.nuspec",
+        "icon.png",
+        "lib/net6.0/Duende.IdentityServer.AspNetIdentity.dll",
+        "lib/net6.0/Duende.IdentityServer.AspNetIdentity.xml",
+        "lib/net7.0/Duende.IdentityServer.AspNetIdentity.dll",
+        "lib/net7.0/Duende.IdentityServer.AspNetIdentity.xml"
       ]
     },
     "Duende.IdentityServer.EntityFramework/6.3.6": {
@@ -3802,6 +3838,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Duende.IdentityServer >= 6.3.6",
+      "Duende.IdentityServer.AspNetIdentity >= 6.3.6",
       "Duende.IdentityServer.EntityFramework >= 6.3.6",
       "Duende.IdentityServer.EntityFramework.Storage >= 6.3.6",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.24",
@@ -3857,6 +3894,10 @@
         "targetAlias": "net6.0",
         "dependencies": {
           "Duende.IdentityServer": {
+            "target": "Package",
+            "version": "[6.3.6, )"
+          },
+          "Duende.IdentityServer.AspNetIdentity": {
             "target": "Package",
             "version": "[6.3.6, )"
           },

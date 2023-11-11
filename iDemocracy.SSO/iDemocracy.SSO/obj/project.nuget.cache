@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TzBAqK59guY7ALADgUCvza2WbeKDlQObznsFd7H46YH3Ik7MA7D0cEk7W1ZkwpuVXqAKFGknC/PflRwBKhXw1w==",
+  "dgSpecHash": "4PV3Y4YjgL5fXsLRyIGV+HxzblPnxCjykbdJLAmTP14DHPEr+QDTtsAvTRAf6G/1e7LxolcihqQEIhIFx1bDhg==",
   "success": true,
   "projectFilePath": "C:\\Users\\zluis\\source\\repos\\iDemocracy\\iDemocracy.SSO\\iDemocracy.SSO\\iDemocracy.SSO\\iDemocracy.SSO.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\zluis\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\zluis\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\zluis\\.nuget\\packages\\duende.identityserver\\6.3.6\\duende.identityserver.6.3.6.nupkg.sha512",
+    "C:\\Users\\zluis\\.nuget\\packages\\duende.identityserver.aspnetidentity\\6.3.6\\duende.identityserver.aspnetidentity.6.3.6.nupkg.sha512",
     "C:\\Users\\zluis\\.nuget\\packages\\duende.identityserver.entityframework\\6.3.6\\duende.identityserver.entityframework.6.3.6.nupkg.sha512",
     "C:\\Users\\zluis\\.nuget\\packages\\duende.identityserver.entityframework.storage\\6.3.6\\duende.identityserver.entityframework.storage.6.3.6.nupkg.sha512",
     "C:\\Users\\zluis\\.nuget\\packages\\duende.identityserver.storage\\6.3.6\\duende.identityserver.storage.6.3.6.nupkg.sha512",

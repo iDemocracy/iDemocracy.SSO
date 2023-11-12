@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/iDemocracy.SSO/.vs/iDemocracy.SSO/DesignTimeBuild/.dtbcache.v2
+/iDemocracy.SSO/.vs/iDemocracy.SSO/FileContentIndex/b0c488f7-86e7-47a0-9731-131e2c40dfee.vsidx
+*.vsidx
+/iDemocracy.SSO/.vs/iDemocracy.SSO/v17/.suo

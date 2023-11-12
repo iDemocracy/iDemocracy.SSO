@@ -32,12 +32,27 @@ public static class Config
             // machine-to-machine client (from quickstart 1)
             new()
             {
-                ClientId = "client",
+                ClientId = "api",
                 ClientSecrets = { new Secret("secret".Sha256()) },
 
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
-                // scopes that client has access to
-                AllowedScopes = { "api1" }
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword, // Cambiado a Authorization Code Flow
+                RedirectUris =
+                {
+                    "https://localhost:7166/signin-oidc"
+                }, // Asegúrate de que coincida con la configuración en tu cliente
+                PostLogoutRedirectUris =
+                {
+                    "https://localhost:7166/signout-callback-oidc"
+                }, // Asegúrate de que coincida con la configuración en tu cliente
+                RequirePkce = true, // Requerir PKCE para Authorization Code Flow
+                AllowOfflineAccess = true,
+                AllowedScopes = new List<string>
+                {
+                    IdentityServerConstants.StandardScopes.OpenId,
+                    IdentityServerConstants.StandardScopes.Profile,
+                    "api1"
+                },
+                AllowedCorsOrigins = { "https://localhost:7166/" } // Permitir CORS para tu aplicación cliente
             },
             // interactive ASP.NET Core Web App
             new()

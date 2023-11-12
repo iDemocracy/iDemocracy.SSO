@@ -37,6 +37,17 @@ builder.Services.AddIdentityServer()
     .AddConfigurationStore<ApplicationDbContext>()
     .AddOperationalStore<ApplicationDbContext>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -60,6 +71,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseIdentityServer();
+
+app.UseCors("AllowAll");
 
 app.UseRouting();
 

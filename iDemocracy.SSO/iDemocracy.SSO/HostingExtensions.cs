@@ -35,6 +35,12 @@ internal static class HostingExtensions
                 context.SaveChanges();
             }
 
+            if (!context.ApiResources.Any())
+            {
+                foreach (var resource in Config.ApiResources) context.ApiResources.Add(resource.ToEntity());
+                context.SaveChanges();
+            }
+
             if (!context.Users.Any())
             {
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();

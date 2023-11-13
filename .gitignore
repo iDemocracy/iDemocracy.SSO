@@ -364,3 +364,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/iDemocracy.SSO/iDemocracy.SSO/bin/Debug/net6.0/iDemocracy.SSO.dll
+/iDemocracy.SSO/iDemocracy.SSO/bin/Debug/net6.0/iDemocracy.SSO.pdb
+/iDemocracy.SSO/iDemocracy.SSO/obj/Debug/net6.0/iDemocracy.SSO.dll
+/iDemocracy.SSO/iDemocracy.SSO/obj/Debug/net6.0/iDemocracy.SSO.pdb

@@ -18,12 +18,18 @@ public static class Config
     };
 
     public static IEnumerable<ApiResource> ApiResources =>
-        new List<ApiResource>();
+        new List<ApiResource>
+        {
+            new("api1", "API")
+            {
+                Scopes = { "api1" }
+            }
+        };
 
     public static IEnumerable<ApiScope> ApiScopes =>
         new List<ApiScope>
         {
-            new("api1", "MyAPI")
+            new("api1", "Full access to API")
         };
 
     public static IEnumerable<Client> Clients =>
@@ -35,24 +41,19 @@ public static class Config
                 ClientId = "api",
                 ClientSecrets = { new Secret("secret".Sha256()) },
 
-                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword, // Cambiado a Authorization Code Flow
-                RedirectUris =
+                AllowedGrantTypes = GrantTypes.Code,
+                RedirectUris = new List<string>
                 {
-                    "https://localhost:7166/signin-oidc"
-                }, // Asegúrate de que coincida con la configuración en tu cliente
-                PostLogoutRedirectUris =
-                {
-                    "https://localhost:7166/signout-callback-oidc"
-                }, // Asegúrate de que coincida con la configuración en tu cliente
-                RequirePkce = true, // Requerir PKCE para Authorization Code Flow
-                AllowOfflineAccess = true,
+                    "https://localhost:7166/swagger/oauth2-redirect.html"
+                },
+                RequirePkce = true,
+                RequireClientSecret = true,
+                // scopes that client has access to
                 AllowedScopes = new List<string>
                 {
-                    IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile,
                     "api1"
                 },
-                AllowedCorsOrigins = { "https://localhost:7166/" } // Permitir CORS para tu aplicación cliente
+                AllowedCorsOrigins = { "https://localhost:7166" }
             },
             // interactive ASP.NET Core Web App
             new()

@@ -39,10 +39,9 @@ builder.Services.AddIdentityServer()
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
+    options.AddPolicy("AllowAnyOrigin", builder =>
     {
-        builder
-            .AllowAnyOrigin()
+        builder.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -72,7 +71,7 @@ app.UseStaticFiles();
 
 app.UseIdentityServer();
 
-app.UseCors("AllowAll");
+app.UseCors("AllowAnyOrigin");
 
 app.UseRouting();
 

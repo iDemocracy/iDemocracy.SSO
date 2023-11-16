@@ -117,7 +117,7 @@ public class Index : PageModel
         };
     }
 
-    public async Task<IActionResult> OnGet(string returnUrl)
+    public async Task<IActionResult> OnGet(string? returnUrl = null)
     {
         await BuildModelAsync(returnUrl);
 

@@ -60,11 +60,18 @@ public static class Config
             {
                 ClientId = "web",
                 ClientSecrets = { new Secret("secret".Sha256()) },
-
+                RequirePkce = true,
+                RequireClientSecret = true,
                 AllowedGrantTypes = GrantTypes.Code,
 
                 // where to redirect after login
-                RedirectUris = { "https://localhost:5002/signin-oidc" },
+                RedirectUris = new List<string>
+                {
+                    "http://localhost:4200",
+                    "https://localhost:4200",
+                    "https://localhost:4200/signin-oidc",
+                    "http://localhost:4200/signin-oidc"
+                },
 
                 // where to redirect after logout
                 PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" },
@@ -76,6 +83,11 @@ public static class Config
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
                     "api1"
+                },
+                AllowedCorsOrigins = new List<string>
+                {
+                    "https://localhost:4200",
+                    "http://localhost:4200"
                 }
             }
         };
